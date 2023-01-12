@@ -1,0 +1,115 @@
+{
+    "primes": {
+        "Erk": [
+            [
+                {
+                    "Erk": 0,
+                    "Raf": 0
+                },
+                {
+                    "Mek": 0
+                }
+            ],
+            [
+                {
+                    "Mek": 1,
+                    "Raf": 1
+                },
+                {
+                    "Erk": 1,
+                    "Mek": 1
+                }
+            ]
+        ],
+        "Mek": [
+            [
+                {
+                    "Erk": 0,
+                    "Raf": 0
+                },
+                {
+                    "Erk": 0,
+                    "Mek": 0
+                }
+            ],
+            [
+                {
+                    "Mek": 1,
+                    "Raf": 1
+                },
+                {
+                    "Erk": 1
+                }
+            ]
+        ],
+        "Raf": [
+            [
+                {
+                    "Erk": 1,
+                    "Raf": 1
+                }
+            ],
+            [
+                {
+                    "Raf": 0
+                },
+                {
+                    "Erk": 0
+                }
+            ]
+        ]
+    },
+    "update": "asynchronous",
+    "markers": [],
+    "phenotypes": [
+        {
+            "name": "Pheno A",
+            "pattern": "",
+            "activated_markers": [],
+            "inhibited_markers": [],
+            "oscillating_markers": [],
+            "states": [
+                {
+                    "str": "001",
+                    "dict": {
+                        "Erk": 0,
+                        "Mek": 0,
+                        "Raf": 1
+                    },
+                    "prop": "!Erk&!Mek&Raf",
+                    "is_steady": true,
+                    "is_cyclic": false,
+                    "min_trap_space": {
+                        "str": "001",
+                        "dict": {
+                            "Raf": 1,
+                            "Mek": 0,
+                            "Erk": 0
+                        },
+                        "prop": "!Erk&!Mek&Raf"
+                    }
+                },
+                {
+                    "str": "111",
+                    "dict": {
+                        "Mek": 1,
+                        "Erk": 1,
+                        "Raf": 1
+                    },
+                    "prop": "Erk&Mek&Raf",
+                    "is_steady": false,
+                    "is_cyclic": true,
+                    "min_trap_space": {
+                        "str": "11-",
+                        "dict": {
+                            "Mek": 1,
+                            "Erk": 1
+                        },
+                        "prop": "Erk&Mek"
+                    }
+                }
+            ],
+            "stateformula": "(!Erk&!Mek&Raf | Erk&Mek&Raf)"
+        }
+    ]
+}
